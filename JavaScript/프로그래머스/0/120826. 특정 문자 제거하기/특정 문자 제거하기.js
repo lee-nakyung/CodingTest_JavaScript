@@ -1,6 +1,8 @@
 function solution(my_string, letter) {
     var answer = '';
+    var string = my_string.split("");
     
-    answer = my_string.replaceAll(letter,"");
+    answer = string.filter((value) => value !== letter).join("");
+    
     return answer;
 }
