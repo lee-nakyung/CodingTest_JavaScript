@@ -1,7 +1,7 @@
 function solution(array) {
     var answer = 0;
     
-    array.sort((a,b)=> a-b); //내림차순
-    answer = array[Math.floor(array.length/2)];
+    array2 = array.sort((a,b)=>a-b);
+    answer = array2[Math.floor(array2.length/2)];
     return answer;
 }
