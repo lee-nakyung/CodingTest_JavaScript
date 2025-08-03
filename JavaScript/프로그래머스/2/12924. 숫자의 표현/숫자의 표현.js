@@ -7,9 +7,10 @@
 
 function solution(n) {
     var count = 0;
+
     
     for(let i=1; i<=n; i++){
-            let sum = 0;
+        let sum =0;
         for(let j=i; j<=n; j++){
             sum+=j;
             if(sum===n){
@@ -19,6 +20,7 @@ function solution(n) {
                 break;
             }
         }
+
     }
             return count;
 }
