@@ -1,5 +1,5 @@
 function solution(n, t) {
-    var answer = 0;
-    answer = n * (2**t);
+    let answer = 0;
+    answer=Math.pow(2,t)*n
     return answer;
 }
