@@ -1,17 +1,19 @@
+// 1. 일단 기본적으로는 다 푸쉬를 수행한다.
+// 2. 근데 내 앞에 있는 것과 지금 내가 넣으려는게 같다? 그러면 팝을 한다.
+// 3. 그리고 없어지면 stack의 길이가 0이다? 이러면 1을 리턴, 아닐 경우 0을 리턴한다.
+
 function solution(s)
 {
-    const stack = [];
-    // 일단 기본적으로는 스택에 하나씩 푸쉬를 한다. 
-    // 그런데 내 앞에 있는 문자열이 지금 내 문자랑 같으면 pop을 한다.
-    // 나중에 길이가 0이면 1을 반환하고, 그렇지 않으면 0을 반환한다.
+    var stack = [];
     
-    for(const c of s){
-        if(stack.length > 0 && stack[stack.length-1] === c){
+    for(let i=0; i<s.length; i++){
+        if(stack[stack.length-1] === s[i]){
             stack.pop();
         }else {
-            stack.push(c);
+            stack.push(s[i]);
         }
     }
     
-    return stack.length === 0 ? 1 : 0;
+    
+    return stack.length===0 ? 1 : 0;
 }
