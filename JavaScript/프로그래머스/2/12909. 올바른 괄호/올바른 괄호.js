@@ -2,18 +2,18 @@ function solution(s){
     
 let count = 0;
     
-    
-    for(const c of s){
-        if(c==="("){
-            count++;
+    for(let i=0; i<s.length; i++){
+        if(s[i]==="("){
+            count ++;
         }
-        else {
-            count--;
-        }
-        
-        if(count<0){
-            return false;
+        else if (s[i]===")"){
+            if(count ===0){
+                return false;
+            }
+            else count --;
         }
     }
-    return !count;
+    
+    return count===0;
+    
 }
