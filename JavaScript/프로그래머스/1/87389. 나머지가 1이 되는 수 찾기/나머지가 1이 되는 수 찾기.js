@@ -1,10 +1,11 @@
-function solution(n) {
-    var answer = 0;
-    
 
-    for(let i=1; i<n; i++){
+
+function solution(n) {
+
+    for(let i=0; i<n; i++){
         if(n%i===1){
             return i;
         }
     }
+ 
 }
