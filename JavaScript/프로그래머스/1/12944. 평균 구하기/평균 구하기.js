@@ -4,6 +4,5 @@ function solution(arr) {
     for(let i=0; i<arr.length; i++){
         answer+=arr[i];
     }
-    
     return answer/arr.length;
 }
