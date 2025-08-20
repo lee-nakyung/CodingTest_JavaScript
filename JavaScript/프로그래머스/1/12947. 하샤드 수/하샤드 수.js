@@ -1,8 +1,14 @@
+// 자릿수의 합을 구하려면 일단 문자열 -> 배열 -> 자릿수의 합
+// x%자릿수의 합 == 0 이면 true 아니면 false
 function solution(x) {
-    var answer = true;
-    
-    //문자열로 바꿔서 , 더한 값이 , x%로 나눴을때 0 이면, true 그렇지 않으면 false.
-    
-    answer = x% [...String(x)].reduce((a,b)=> a+ Number(b), 0 )=== 0 ? true : false;
-    return answer;
-}
+
+    var array = x.toString().split("").map(Number);
+             let sum = 0;
+    for(let i=0; i<array.length; i++){
+        sum +=array[i];
+    }
+        if(x%sum===0){
+            return true;
+        } 
+    return false;
+    }
