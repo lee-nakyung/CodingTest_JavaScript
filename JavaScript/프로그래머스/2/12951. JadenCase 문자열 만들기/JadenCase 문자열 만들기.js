@@ -1,19 +1,16 @@
-// 첫 문자는 대문자, 나머지는 소문자가 기본
-// 첫 문자가 알파벳이 아닐 때에는 그 다음 문자는 소문자. 
-// 첫 문자를 판별하려면? 그 앞이 공백이여야함. 
-// 따라서 공백이면 ? 그 다음 s[i]가 소문자. 
-
+// 모든 단어의 첫 문자는 대문자 => 즉 앞이 공백이면 그 다음꺼 대문자
+// 그 외는 소문자
+// 첫문자가 알파벳. 
 function solution(s) {
     var answer = '';
     
     for(let i=0; i<s.length; i++){
-       if(s[i-1]===" "){
-           answer+=s[i].toUpperCase();
-       } else if (i===0){
-           answer+=s[i].toUpperCase();
-       } else {
-           answer+=s[i].toLowerCase();
-       }
+        if(s[i-1]===" " || i===0){
+            answer += s[i].toUpperCase();
+        console.log(answer);
+        } else {
+            answer += s[i].toLowerCase();
+        }
     }
     return answer;
 }
