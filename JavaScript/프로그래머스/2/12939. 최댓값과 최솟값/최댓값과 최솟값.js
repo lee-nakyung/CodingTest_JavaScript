@@ -1,16 +1,13 @@
+// 문자열 -> 배열 -> 숫자 배열
+//최솟값과 최대값만 남겨야하므로, 인덱스 0 / 그리고 s.length-1
+// 만약 s의 0 과 1이 같으면 그냥 그 s의 값을 리턴한다.
+
 function solution(s) {
-    var answer = '';
+    var answer = "";
+    var str = "";
     
-    // 최댓값 최솟값 구하기 위해서는 문자열에서 배열로 바뀌어야한다.
-    // 문자열 -> 문자열 배열 -> 숫자로 된 배열
-    var numbers = s.split(" ");
-    // 문자열이 들어오면 자동으로 숫자로 바꿔준다. 
-    var max = Math.max(...numbers);
-    var min = Math.min(...numbers);
-    //최솟값 먼저 그다음 최댓값이 들어가야한다. 
-    answer = `${min} ${max}`
+    str = s.split(" ").map(Number).sort((a,b)=>a-b);
+    return answer = str[0]+" "+str[str.length-1];
+
     
-    
-  
-    return answer;
 }
