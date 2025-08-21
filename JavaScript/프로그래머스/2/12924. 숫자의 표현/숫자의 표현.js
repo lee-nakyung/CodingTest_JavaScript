@@ -1,26 +1,27 @@
-// 브루트포스 
-// start를 1부터 n까지 순회한다
-// 각 start에 대해 연속된 수를 하나씩 더하면서 합을 계산한다
-// 합이 n이 되면 count를 1 증가시킨다
-// 합이 n 이상이 되면 해당 start에 대한 반복을 종료한다
-// 최종 count를 반환한다
+// 1. i는 1부터 n까지 순회한다.
+// 2. while문으로 sum값을 구해서 누적한다. j를 인덱스로 하여 sum값을 구하면 ++ 해준다.
+// 3. sum과 n이 같아지면 count가 증가되고 break문으로 탈출한다.
+// 4. count를 리턴한다.
 
 function solution(n) {
-    var count = 0;
-
+    var answer = 0;
+    let count = 0;
     
     for(let i=1; i<=n; i++){
-        let sum =0;
-        for(let j=i; j<=n; j++){
+        let j = i;
+            let sum = 0;
+        
+        while(sum<n){
             sum+=j;
-            if(sum===n){
+            j++;
+            if(sum==n){
                 count++;
+                break;
             }
-            if(sum>=n){
+            if(sum+j>n){
                 break;
             }
         }
-
     }
-            return count;
+    return count;
 }
