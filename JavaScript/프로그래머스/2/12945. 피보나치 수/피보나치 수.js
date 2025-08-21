@@ -1,14 +1,12 @@
 function solution(n) {
-    if(n<=1) return n;
-    
-    let prev = 0;
-    let curr = 1;
+    let t1 = 0;
+    let t2 = 1;
+    let answer = 0;
     
     for(let i=2; i<=n; i++){
-        const next = (prev+curr)%1234567;
-        prev = curr;
-        curr = next;
+        answer = (t1 + t2) %1234567;
+        t1 = t2;
+        t2 = answer;
     }
-
-    return curr;
+    return answer;
 }
