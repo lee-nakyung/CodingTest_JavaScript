@@ -1,17 +1,17 @@
-// 들어온 배열 중에서 더 큰 값을 width로 몰고, 더 작은 값을 height로 몰아서
-// 그 중에서 그 배열 중에서 제일 큰값 * 제일 큰값을 하면 될 것이다.
-
-
+// 최댓값 = 즉 Math.max로 구한 것들은, 이제 sizes[i]에서 최댓값중에 제일 최댓값 을 구해야한다. 
+// garo에 들어갈 것은 sizes[0]에서 제일 큰 값. 
 function solution(sizes) {
-    const width=[];
-    const height=[];
-    for(let i=0; i<sizes.length; i++){
-        const max = Math.max(sizes[i][0], sizes[i][1]);
-        const min = Math.min(sizes[i][0], sizes[i][1]);
-        
-        width.push(max);
-        height.push(min);
-    }
+
+    let garo = [];
+        let sero = [];
     
-    return Math.max(...width) * Math.max(...height);
+    for(let i=0; i<sizes.length; i++){
+         
+        garo.push(Math.max(...sizes[i]));
+        sero.push(Math.min(...sizes[i]));
+
+        
+    }
+
+    return Math.max(...garo) * Math.max(...sero);
 }
