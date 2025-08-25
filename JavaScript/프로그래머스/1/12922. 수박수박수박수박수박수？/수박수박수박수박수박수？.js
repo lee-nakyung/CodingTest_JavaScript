@@ -1,11 +1,10 @@
 function solution(n) {
-    var answer = "";
+    var answer = '';
     
     for(let i=1; i<=n; i++){
-        if(i%2===1){
+        if(i%2!=0){
             answer+="수";
-        }
-        else {
+        } else {
             answer+="박";
         }
     }
