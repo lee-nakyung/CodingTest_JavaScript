@@ -1,15 +1,20 @@
+// filter 메소드를 이용해서 min 값이 아닌 것들만 해서 다시 새로운 배열을 반환하자. 
+
 function solution(arr) {
     
-    const min = Math.min(...arr);
-const idx = arr.indexOf(min);
-
+    var answer=[];
     
-    if(arr.length === 1){
-        arr.pop();
-        arr.push(-1);
+    var min = Math.min(...arr);
+    
+    arr = arr.filter(num => num!= min);
+    
+    if(arr.length ===0 ){
+        answer.push(-1);
     } else {
-           arr.splice(idx,1); 
+        return arr;
     }
     
-    return arr;
+    return answer;
+
+  
 }
