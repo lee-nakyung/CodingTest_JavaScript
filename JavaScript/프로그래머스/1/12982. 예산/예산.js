@@ -1,12 +1,18 @@
-function solution(d, budget) {
-    d.sort((a, b) => a - b);
-    let count = 0;
-    
-    for(let i = 0; i < d.length; i++) {
-        if(d[i] > budget) break;
+// 뺄수 있으면...? 즉 budget에 남은 금액이 d보다 높으면 ! 그러면 result ++;
 
-        budget -= d[i];
-        count += 1;
+function solution(d, budget) {
+    var answer = 0;
+    d.sort((a,b)=>a-b);
+
+    
+    for(let i=0; i<d.length; i++){
+        if(d[i]<=budget){
+            budget-=d[i];
+            answer++;
+        }
+        else {
+        break;
+        }
     }
-    return count;
+       return answer;
 }
