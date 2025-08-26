@@ -1,13 +1,10 @@
-// Set을 이용하면 중복을 제거할 수 있음
-
-
 function solution(numbers) {
-    var result = new Set();
+    var answer = new Set();
     
-    for(let i=0; i<numbers.length; i++){
+    for(let i=0; i<numbers.length-1; i++){
         for(let j=i+1; j<numbers.length; j++){
-            result.add(numbers[i]+numbers[j]);
+            answer.add(numbers[i]+numbers[j]);
         }
     }
-    return [...result].sort((a,b)=>a-b);
+    return [...answer].sort((a,b)=>a-b);
 }
