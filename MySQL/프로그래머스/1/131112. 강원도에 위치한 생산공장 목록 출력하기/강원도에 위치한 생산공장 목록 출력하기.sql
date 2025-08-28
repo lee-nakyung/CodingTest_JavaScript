@@ -1,0 +1,10 @@
+# 식품공장의 정보를 담은 테이블 => FOOD_FACTORY
+# SELECT => 공장 ID, 공장 이름, 주소
+# WHERE => 위치가 강원도
+# ORDER BY => 공장 ID
+
+
+SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
+FROM FOOD_FACTORY
+WHERE ADDRESS LIKE "강원도%"
+ORDER BY FACTORY_ID
