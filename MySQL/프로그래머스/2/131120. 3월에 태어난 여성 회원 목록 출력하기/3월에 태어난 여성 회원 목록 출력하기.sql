@@ -1,0 +1,10 @@
+# 식당 리뷰 사이트의 회원정보를 담은 테이블 => MEMBER_PROFILE
+# SELECT => ID, 이름, 성별, 생년월일
+# WHERE => 생일이 3월인 여성
+# NULL 인 경우는 출력대상에서 제외 => 전화번호 IS NOT NULL
+# ORDER BY => 회원 ID를 기준으로 오름차순
+
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH,"%Y-%m-%d") AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE (MONTH(DATE_OF_BIRTH)=3) AND GENDER = "W" AND TLNO IS NOT NULL
+ORDER BY MEMBER_ID 
