@@ -1,0 +1,8 @@
+# 대여중인 자동차들의 정보를 담은 테이블 => CAR_RENTAL_COMPANY_CAR
+# SELECT => AVERAGE_FEE
+# WHERE => 자동차 종류가 SUV인 자동차
+# 소수 첫번째 자리에서 반올림하고, AVERAGE_FEE 로 AS 처리
+
+SELECT ROUND(AVG(DAILY_FEE)) AS AVERAGE_FEE
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE CAR_TYPE = "SUV"
